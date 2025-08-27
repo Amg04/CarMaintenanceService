@@ -1,0 +1,104 @@
+﻿@model Ticket
+@{
+	ViewData["Title"] = "Ticket Details";
+}
+
+<div style="margin:50px;" class="d-flex justify-content-center align-items-center">
+	<div class="col-12 col-md-10 col-lg-8">
+		<div class="card shadow-lg p-4">
+			<h3 class="text-center font-weight-bold mb-4">Details</h3>
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label asp-for="Car.PlateNumber" class="form-label"></label>
+					<input asp-for="Car.PlateNumber" class="form-control rounded-pill" disabled />
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">Service Name</label>
+					<input asp-for="Service.Name" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label asp-for="stateType" class="form-label"></label>
+					<input asp-for="stateType" class="form-control rounded-pill" disabled />
+
+				</div>
+				<div class="col-md-6">
+					<label asp-for="CurrentKilometres" class="form-label"></label>
+					<input asp-for="CurrentKilometres" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label asp-for="Location" class="form-label"></label>
+					<input asp-for="Location" class="form-control rounded-pill" disabled />
+				</div>
+				<div class="col-md-6">
+					<label asp-for="CreatedAt" class="form-label"></label>
+					<input asp-for="CreatedAt" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label asp-for="PaymentStatus" class="form-label"></label>
+					<input asp-for="PaymentStatus" class="form-control rounded-pill" disabled />
+				</div>
+				<div class="col-md-6">
+					<label asp-for="PaymentDate" class="form-label"></label>
+					<input asp-for="PaymentDate" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+			
+			@if (Model.stateType == StateType.Assigned)
+			{
+				<div class="row mb-3">
+					<div class="col-md-12">
+						<label asp-for="StartDateTime" class="form-label"></label>
+						<input asp-for="StartDateTime" class="form-control rounded-pill" disabled />
+					</div>
+				</div>
+			}
+
+			@if (Model.stateType == StateType.Finished)
+			{
+				<div class="row mb-3">
+					<div class="col-md-6">
+						<label asp-for="StartDateTime" class="form-label"></label>
+						<input asp-for="StartDateTime" class="form-control rounded-pill" disabled />
+					</div>
+					<div class="col-md-6">
+						<label asp-for="EndDateTime" class="form-label"></label>
+						<input asp-for="EndDateTime" class="form-control rounded-pill" disabled />
+					</div>
+				</div>
+
+
+				<div class="row mb-3">
+					<div class="col-md-12">
+						<label asp-for="FinalReport" class="form-label"></label>
+						<textarea asp-for="FinalReport" class="form-control" rows="4" disabled></textarea>
+					</div>
+				</div>
+
+				@if(Model.Feedback != null)
+				{
+					<div class="row mb-3">
+						<div class="col-md-12">
+							<label asp-for="Feedback" class="form-label"></label>
+							<textarea asp-for="Feedback" class="form-control" rows="4" disabled></textarea>
+						</div>
+					</div>
+				}
+				
+			}
+			<div class="d-flex justify-content-center mt-4">
+				<a asp-controller="Ticket" asp-action="Details" asp-route-id ="@Model.Id" class="btn btn-outline-dark">
+					<i class="bi bi-arrow-left me-1"></i>Back To List
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

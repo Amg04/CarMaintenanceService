@@ -1,0 +1,43 @@
+﻿@model ServiceViewModel
+@inject IUnitOfWork unitOfwork
+@{
+    var Categories = new SelectList(unitOfwork.Repository<Category>().GetAll(), "Id", "Name");
+}
+
+<div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Price" class="form-label"></label>
+    <input asp-for="Price" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="RecommendedKilometres" class="form-label"></label>
+    <input asp-for="RecommendedKilometres" class="form-control" />
+    <span asp-validation-for="RecommendedKilometres" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="CategoryId" class="form-label"></label>
+    <select asp-for="CategoryId" asp-items="Categories" class="form-select border-0 shadow">
+        <option disabled selected>--Select Service--</option>
+    </select>
+    <span asp-validation-for="CategoryId" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+
+
+
+
+
+

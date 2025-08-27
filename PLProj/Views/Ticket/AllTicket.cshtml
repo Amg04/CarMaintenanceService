@@ -1,0 +1,96 @@
+﻿@{
+	// Query String استقبال قيمة الحالة من الـ
+	var status = Context.Request.Query["status"];
+	var New = "text-secondary";
+	var Assigned = "text-secondary";
+	var Finished = "text-secondary";
+	var all = "text-secondary";
+
+	switch (status)
+	{
+		case "New":
+			New = "active text-white bg-primary";
+			break;
+		case "Assigned":
+			Assigned = "active text-white bg-primary";
+			break;
+		case "Finished":
+			Finished = "active text-white bg-primary";
+			break;
+		default:
+			all = "active text-white bg-primary";
+			break;
+	}
+
+	ViewData["Title"] = "Ticket List";
+
+	var currentUserRole = User.IsInRole(SD.AdminRole) ? SD.AdminRole :
+							User.IsInRole(SD.CustomerRole) ? SD.CustomerRole :
+							User.IsInRole(SD.DriverRole) ? SD.DriverRole : SD.TechnicianRole;
+
+
+}
+
+
+
+<partial name="_notification" />
+
+<div class="container mt-5">
+	<div class="card shadow border-0 mt-4" style="width:60%">
+		<div class="card-header bg-dark text-white py-3 ">
+			<div class="row">
+				@if (!User.IsInRole(SD.CustomerRole))
+				{
+					<div class="col-12 text-center">
+						<h2 class="text-white py-2">Ticket List</h2>
+					</div>
+				}
+				else
+				{
+					<div class="bg-dark text-white d-flex justify-content-between align-items-center px-3 py-3 rounded-top">
+						<h2 class="mb-0">My Tickets</h2>
+						<a asp-action="AddTicket" class="btn btn-light btn-sm"><i class="fa-solid fa-plus"></i> Add New Ticket</a>
+					</div>
+				}
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="d-flex justify-content-between pb-5 pt-2">
+				<ul class="list-group list-group-horizontal-sm">
+					<a style="text-decoration:none" asp-controller="Ticket" asp-action="AllTicket" asp-route-status="New">
+					<li class="list-group-item @New">New</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="Ticket" asp-action="AllTicket" asp-route-status="Assigned">
+					<li class="list-group-item @Assigned">Assigned</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="Ticket" asp-action="AllTicket" asp-route-status="Finished">
+					<li class="list-group-item @Finished">Finished</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="Ticket" asp-action="AllTicket" asp-route-status="all">
+					<li class="list-group-item @all">All</li>
+					</a>
+				</ul>
+			</div>
+			<div class="table-responsive">
+				<table id="tblData" class="table table-bordered table-striped" style="width:100%">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Service</th>
+							<th>Car</th>
+							<th>State Type</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script src="~/js/ticket.js"></script>
+	<script>
+		var currentUserRole = '@currentUserRole';
+	</script>
+}

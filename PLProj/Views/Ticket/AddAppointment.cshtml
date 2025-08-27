@@ -1,0 +1,46 @@
+﻿@model AddAppointmentViewModel
+@{
+    ViewData["Title"] = "Add Appointment";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm w-100" style="max-width: 500px;">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Add Appointment</h2>
+            <form asp-controller="Ticket" asp-action="AddAppointment" asp-route-id="@ViewBag.TicketId" method="post">
+                @Html.AntiForgeryToken()
+                <div class="mb-3">
+                    <label asp-for="TechnicianId" class="ms-2"></label>
+                    <select asp-for="TechnicianId" asp-items="ViewBag.TechList" class="form-select border-0 shadow">
+                        <option disabled selected>-- Select Technicial --</option>
+                    </select>
+                    <span asp-validation-for="TechnicianId" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DriverId" class="ms-2"></label>
+                    <select asp-for="DriverId" asp-items="ViewBag.DriverList" class="form-select border-0 shadow">
+                        <option disabled selected>-- Select Driver --</option>
+                    </select>
+                    <span asp-validation-for="DriverId" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="StartDateTime" class="form-label"></label>
+                    <input asp-for="StartDateTime" class="form-control" />
+                    <span asp-validation-for="StartDateTime" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between ">
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-check-circle me-1"></i>Add</button>
+                    <a asp-controller="Ticket" asp-action="AllTicket" class="btn btn-outline-dark">
+                        <i class="bi bi-arrow-left me-1"></i>Back To List
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+

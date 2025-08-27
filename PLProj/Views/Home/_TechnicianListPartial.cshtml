@@ -1,0 +1,12 @@
+﻿@model IEnumerable<TechnicianViewModel>
+
+@foreach (var item in Model)
+{
+    <div class="technician-card">
+        <img src="@item.Img" alt="Technician" class="technician-img" />
+        <div class="technician-info">
+            <div class="technician-name">@item.Name</div>
+            <div class="technician-role">@item.Category.Name</div>
+        </div>
+    </div>
+}

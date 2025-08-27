@@ -1,0 +1,267 @@
+﻿@model OrderVM
+
+<partial name="_notification" />
+
+<form method="post">
+	<div class="container">
+		@Html.AntiForgeryToken()
+		<input hidden asp-for="OrderHeader.Id" />
+		<input hidden asp-for="OrderHeader.UserId" />
+		<div asp-validation-summary="All" class="text-danger mb-3"></div>
+		<div class="card rounded p-2" style="width:80%">
+
+			<div class="card-header bg-dark text-light d-flex justify-content-between align-items-center m-0">
+				<span><i class="bi bi-cart"></i> Order Summary</span>
+				<a asp-action="Index" class="btn btn-outline-info btn-sm">Back to Orders</a>
+			</div>
+
+			<div class="card-body row">
+				<!-- Pickup Details -->
+				<div class="col-12 col-lg-6 pb-4">
+					<h5 class="mb-3">PickUp Details</h5>
+
+					<div class="row my-1">
+						<div class="col-3">Name</div>
+						<div class="col-9">
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<input asp-for="OrderHeader.Name" type="text" class="form-control" />
+								<span asp-validation-for="OrderHeader.Name" class="text-danger"></span>
+							}
+							else
+							{
+								<input asp-for="OrderHeader.Name" type="text" class="form-control" disabled />
+							}
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Phone</div>
+						<div class="col-9">
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<input asp-for="OrderHeader.PhoneNumber" type="text" class="form-control" />
+								<span asp-validation-for="OrderHeader.PhoneNumber" class="text-danger"></span>
+							}
+							else
+							{
+								<input asp-for="OrderHeader.PhoneNumber" type="text" class="form-control" disabled />
+							}
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Address</div>
+						<div class="col-9">
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<input asp-for="OrderHeader.Street" type="text" class="form-control" />
+								<span asp-validation-for="OrderHeader.Street" class="text-danger"></span>
+							}
+							else
+							{
+								<input asp-for="OrderHeader.Street" type="text" class="form-control" disabled />
+							}
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">City</div>
+						<div class="col-9">
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<input asp-for="OrderHeader.City" type="text" class="form-control" />
+								<span asp-validation-for="OrderHeader.City" class="text-danger"></span>
+							}
+							else
+							{
+								<input asp-for="OrderHeader.City" type="text" class="form-control" disabled />
+							}
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Driver Name</div>
+						<div class="col-9">
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<select asp-for="OrderHeader.DriverId" class="form-control" asp-items="ViewBag.driverList">
+									<option disabled selected>-- Select Driver --</option>
+								</select>
+								<span asp-validation-for="OrderHeader.DriverId" class="text-danger"></span>
+							}
+							else
+							{
+								<input type="text" class="form-control" value="@ViewBag.driverName" disabled />
+							}
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Driver Number</div>
+						<div class="col-9">
+							<input type="text" class="form-control" value="@ViewBag.driverNumber" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Email</div>
+						<div class="col-9">
+							<input asp-for="OrderHeader.AppUser.Email" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Order Date</div>
+						<div class="col-9">
+							<input value="@Model.OrderHeader.OrderDate.ToShortDateString()" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Tracking Number</div>
+						<div class="col-9">
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<input asp-for="OrderHeader.TrackingNumber" id="Tracking" type="text" class="form-control" />
+								<span asp-validation-for="OrderHeader.TrackingNumber" class="text-danger"></span>
+							}
+							else
+							{
+								<input asp-for="OrderHeader.TrackingNumber" type="text" class="form-control" disabled />
+							}
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Shipping Date</div>
+						<div class="col-9">
+							<input value="@Model.OrderHeader.ShippingDate" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Session ID</div>
+						<div class="col-9">
+							<input asp-for="OrderHeader.SessionId" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Payment intent ID</div>
+						<div class="col-9">
+							<input asp-for="OrderHeader.PaymentIntentId" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Payment Date</div>
+						<div class="col-9">
+							<input value="@Model.OrderHeader.PaymentDate" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					<div class="row my-1">
+						<div class="col-3">Payment Status</div>
+						<div class="col-9">
+							<input asp-for="OrderHeader.PaymentStatus" type="text" class="form-control" disabled />
+						</div>
+					</div>
+
+					@if (User.IsInRole(SD.AdminRole))
+					{
+						<button type="submit" asp-action="UpdateOrderDetail" class="btn btn-warning w-100 my-2">Update Order Details</button>
+					}
+				</div>
+
+				<!-- Order Summary -->
+				<div class="col-12 col-lg-5 offset-lg-1">
+					<h4 class="mb-3">Order Summary</h4>
+					<label class="btn btn-outline-primary form-control my-2">
+						Order Status - @Model.OrderHeader.OrderStatus
+					</label>
+
+					<ul class="list-group mb-3">
+						@foreach (var item in Model.OrderDetials)
+						{
+							<li class="list-group-item d-flex justify-content-between align-items-center">
+								<div>
+									<h6>@item.Product.Name</h6>
+									<small class="text-muted">Price: @item.Product.Price</small><br />
+									<small class="text-muted">Quantity: @item.Count</small>
+								</div>
+								<span class="text-muted">@((item.Count * item.Price).ToString("c"))</span>
+							</li>
+						}
+
+						<li class="list-group-item bg-dark text-white d-flex justify-content-between">
+							<strong>TOTAL</strong>
+							<strong>@Model.OrderHeader.TotalPrice.ToString("c")</strong>
+						</li>
+					</ul>
+
+
+					@if (User.IsInRole(SD.AdminRole))
+					{
+						if (Model.OrderHeader.OrderStatus == SD.Approve)
+						{
+							<button asp-action="StartProcessing" type="submit" class="btn btn-primary w-100 my-1">Start Processing</button>
+						}
+						else if (Model.OrderHeader.OrderStatus == SD.Proccessing)
+						{
+							<button asp-action="StartShip" onclick="return CheckData()" type="submit" class="btn btn-primary w-100 my-1">Ship Order</button>
+						}
+						
+					}
+					else if (User.IsInRole(SD.CustomerRole))
+					{
+						if (Model.OrderHeader.OrderStatus != SD.Refund
+						&& Model.OrderHeader.OrderStatus != SD.Cancelled
+						&& Model.OrderHeader.OrderStatus != SD.Shipped
+						&& Model.OrderHeader.OrderStatus != SD.Delivered)
+						{
+							<button type="submit" asp-action="CancelOrder" class="btn btn-danger w-100 my-1">Cancel Order</button>
+						}
+					}
+					else if(User.IsInRole(SD.DriverRole))
+					{
+						if (Model.OrderHeader.OrderStatus == SD.Shipped)
+						{
+							<button asp-action="OrderDelivery" type="submit" class="btn btn-primary w-100 my-1"> Delivery Order</button>
+						}
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+@section Scripts {
+	<script>
+				function CheckData() {
+			let tracking = document.getElementById("Tracking").value.trim();
+			let driverId = document.getElementById("OrderHeader_DriverId").value;
+
+			if (tracking === '') {
+				Swal.fire({
+					title: "There is an error",
+					text: "Please Enter Tracking Number",
+					icon: "error",
+					confirmButtonColor: "#3085d6"
+				});
+				return false;
+			}
+			if (driverId === '' || driverId === null || driverId === '-- Select Driver --') {
+				Swal.fire({
+					title: "There is an error",
+					text: "Please select a driver",
+					icon: "error",
+					confirmButtonColor: "#3085d6"
+				});
+				return false;
+			}
+			return true;
+		}
+
+	</script>
+}

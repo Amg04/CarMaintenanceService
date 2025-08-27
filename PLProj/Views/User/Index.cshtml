@@ -1,0 +1,87 @@
+﻿@{
+	// Query String استقبال قيمة الحالة من الـ
+	var role = Context.Request.Query["role"];
+	var customer = "text-secondary";
+	var admin = "text-secondary";
+	var driver = "text-secondary";
+	var technician = "text-secondary";
+	var all = "text-secondary";
+
+	switch (role)
+	{
+		case SD.CustomerRole:
+			customer = "active text-white bg-primary";
+			break;
+		case SD.AdminRole:
+			admin = "active text-white bg-primary";
+			break;
+		case SD.DriverRole:
+			driver = "active text-white bg-primary";
+			break;
+		case SD.TechnicianRole:
+			technician = "active text-white bg-primary";
+			break;
+		default:
+			all = "active text-white bg-primary";
+			break;
+	}
+
+	ViewData["Title"] = "Users List";
+}
+
+
+
+<partial name="_notification" />
+
+<div class="container mt-5">
+	<div class="card shadow border-0 mt-4" style="width:80%">
+		<div class="card-header bg-dark text-white py-3 ">
+			<div class="row">
+					<div class="bg-dark text-white d-flex justify-content-between align-items-center px-3 py-3 rounded-top">
+						<h2 class="mb-0">Users List</h2>
+					<a asp-controller="Account" asp-action="Register" class="btn btn-light text-dark">
+						<i class="fa-solid fa-plus"></i> Add New User
+					</a>
+					</div>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="d-flex justify-content-between pb-5 pt-2">
+				<ul class="list-group list-group-horizontal-sm">
+					<a style="text-decoration:none" asp-controller="User" asp-action="Index" asp-route-role="Customer">
+					<li class="list-group-item @customer">Customer</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="User" asp-action="Index" asp-route-role="Admin">
+					<li class="list-group-item @admin">Admin</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="User" asp-action="Index" asp-route-role="Technician">
+					<li class="list-group-item @technician">Technician</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="User" asp-action="Index" asp-route-role="Driver">
+					<li class="list-group-item @driver">Driver</li>
+					</a>
+					<a style="text-decoration:none" asp-controller="User" asp-action="Index" asp-route-role="all">
+					<li class="list-group-item @all">All</li>
+					</a>
+				</ul>
+			</div>
+			<div class="table-responsive">
+				<table id="tblData" class="table table-bordered table-striped" style="width:100%">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>Role</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script src="~/js/user.js"></script>
+}

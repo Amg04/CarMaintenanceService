@@ -1,0 +1,78 @@
+﻿@model ServiceViewModel
+@inject IUnitOfWork unitOfwork
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+	<div class="card shadow-sm w-100" style="max-width: 700px;">
+		<div class="card-body">
+			<h2 class="card-title text-center mb-4">Edit</h2>
+
+			<form asp-controller="Service" asp-action="Edit" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data">
+				@Html.AntiForgeryToken()
+				<input type="hidden" asp-for="Id" />
+
+				<div class="row" style="padding-bottom:10px">
+					<div class="col-9">
+
+						@await Html.PartialAsync("_CreateEditServicesPartial", Model)
+
+						<div class="mb-3">
+							<label asp-for="ImgPath" class="form-label"></label>
+							<input type="file" name="file" id="imgInput" class="form-control border-0 shadow" />
+						</div>
+						
+					</div>
+
+					@* <div class="col-3 d-flex justify-content-center align-items-center">
+						<div class="border p-1 m-2 text-center">
+							<a href="~/@Model.Img" target="_blank" rel="noopener noreferrer">
+								<img src="~/@Model.Img" id="previewImg" width="100%" style="border-radius:5px;border:1px solid #bbb9b9" />
+							</a>
+						</div>
+					</div> *@
+					<div class="col-3 d-flex justify-content-center align-items-center">
+						@if (!string.IsNullOrWhiteSpace(Model.ImgPath))
+						{
+							<div class="border p-1 m-2 text-center">
+								<a href="~/@Model.ImgPath" target="_blank" rel="noopener noreferrer">
+									<img src="~/@Model.ImgPath" id="previewImg" width="100%" style="border-radius:5px;border:1px solid #bbb9b9" />
+								</a>
+							</div>
+						}
+						else
+						{
+							<div class="text-center">
+								<img id="previewImg" alt="No image uploaded" style="width:100%" />
+							</div>
+						}
+
+					</div>
+				</div>
+				<div class="d-flex justify-content-between">
+					<button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>Save</button>
+					<a asp-controller="Service" asp-action="Index" class="btn btn-outline-dark">
+						<i class="bi bi-arrow-left me-1"></i>Back to list
+					</a>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script>
+		document.getElementById('imgInput').addEventListener('change', function (e) {
+			const file = e.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = function (event) {
+					document.getElementById('previewImg').src = event.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+	</script>
+}

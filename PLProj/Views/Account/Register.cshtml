@@ -1,0 +1,193 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div style="margin:50px;" class="d-flex justify-content-center align-items-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <div class="card shadow-lg p-4">
+            <h3 class="text-center font-weight-bold mb-4">Create an Account</h3>
+
+            <form asp-action="Register" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control rounded-pill" placeholder="Enter your name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control rounded-pill" placeholder="Enter your email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" type="password" class="form-control rounded-pill" placeholder="Create a password" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword" type="password" class="form-control rounded-pill" placeholder="Confirm your password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="City"></label>
+                        <input asp-for="City" class="form-control rounded-pill" placeholder="Enter your city" />
+                        <span asp-validation-for="City" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Street"></label>
+                        <input asp-for="Street" class="form-control rounded-pill" placeholder="Enter your street" />
+                        <span asp-validation-for="Street" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" class="form-control rounded-pill" placeholder="Enter your phone number" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+                @if (User.IsInRole(SD.AdminRole))
+                {
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label asp-for="Role"></label>
+                            <select asp-for="Role" asp-items="@Model.RoleList" class="form-select" id="roleDropdown">
+                                <option disabled selected>--Select Role--</option>
+                            </select>
+                            <span asp-validation-for="Role" class="text-danger"></span>
+
+                        </div>
+                    </div>
+
+                    <div class="row mb-3" >
+                        <div class="col-md-6" id="birthDateWithTech" style="display:none;">
+                            <label asp-for="BirthDate"></label>
+                            <input asp-for="BirthDate" type="date" class="form-control rounded-pill" />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-12" id="birthDateWithDriver" style="display:none;">
+                            <label asp-for="BirthDate"></label>
+                            <input asp-for="BirthDate" type="date" class="form-control rounded-pill" />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6" id="categorySection" style="display:none;">
+                            <label asp-for="CategoryId"></label>
+                            <select asp-for="CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                                <option disabled selected>--Select Category--</option>
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div id="roleFields" style="display:none;">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-check mt-4">
+                                    <input asp-for="Availability" class="form-check-input" type="checkbox" />
+                                    <label asp-for="Availability" class="form-check-label"></label>
+                                    <span asp-validation-for="Availability" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="licenseSection" style="display:none;">
+                                <label asp-for="License"></label>
+                                <input asp-for="License" class="form-control rounded-pill" placeholder="Enter your license" />
+                                <span asp-validation-for="License" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-md-6" id="imageSection">
+                                <label asp-for="Img" class="form-label"></label>
+                                <input type="file" name="file" class="form-control border-0 shadow" />
+                            </div>
+                        </div>
+
+                       
+
+                        <div class="row mb-3" id="licenseDates" style="display:none;">
+                            <div class="col-md-6">
+                                <label asp-for="LicenseDate"></label>
+                                <input asp-for="LicenseDate" type="date" class="form-control rounded-pill" />
+                                <span asp-validation-for="LicenseDate" class="text-danger"></span>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label asp-for="LicenseExpDate"></label>
+                                <input asp-for="LicenseExpDate" type="date" class="form-control rounded-pill" />
+                                <span asp-validation-for="LicenseExpDate" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <button type="submit" class="btn btn-dark btn-block rounded-pill mx-auto d-block mt-4" style="width: 150px;">Register</button>
+
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a asp-action="Login" class="text-dark font-weight-bold">Login Now!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const birthDateWithDriver = document.getElementById("birthDateWithDriver");
+            const birthDateWithTech = document.getElementById("birthDateWithTech");
+            const categorySection = document.getElementById("categorySection");
+            const roleFields = document.getElementById("roleFields");
+            const licenseSection = document.getElementById("licenseSection");
+            const imageSection = document.getElementById("imageSection");
+            const licenseDates = document.getElementById("licenseDates");
+
+            function updateFormVisibility() {
+                const role = roleDropdown.value?.toLowerCase();
+                birthDateWithDriver.style.display = "none";
+                birthDateWithTech.style.display = "none";
+                categorySection.style.display = "none";
+                roleFields.style.display = "none";
+                licenseSection.style.display = "none";
+                imageSection.style.display = "none";
+                licenseDates.style.display = "none";
+
+                if (role === "technician" || role === "driver") {
+                    roleFields.style.display = '';
+                }
+
+                if (role === "technician") {
+                    birthDateWithTech.style.display = '';
+                    categorySection.style.display = '';
+                    imageSection.style.display = '';
+                }
+
+                if (role === "driver") {
+                    birthDateWithDriver.style.display = '';
+                    licenseSection.style.display = '';
+                    licenseDates.style.display = '';
+                }
+            }
+
+            if (roleDropdown) {
+                roleDropdown.addEventListener("change", updateFormVisibility);
+                updateFormVisibility();
+            }
+        });
+    </script>
+}

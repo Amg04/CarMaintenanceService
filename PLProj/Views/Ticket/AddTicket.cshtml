@@ -1,0 +1,103 @@
+﻿@model TicketViewModelCustomer
+
+@{
+	ViewData["Title"] = "Add Ticket";
+	var carList = ViewBag.CarList as IEnumerable<Car>;
+	var serviceList = ViewBag.ServiceList as IEnumerable<Service>;
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+	<div class="card shadow-sm w-100" style="max-width: 600px;">
+		<div class="card-body">
+			<h3 class="card-title text-center mb-4">Add New Ticket</h3>
+
+			<form asp-action="AddTicket" method="post">
+				@Html.AntiForgeryToken()
+				<input type="hidden" asp-for="Id" value="0" />
+
+
+				@if (User.IsInRole(SD.TechnicianRole))
+				{
+						<input type="hidden" asp-for="CarId" />
+						<input type="hidden" asp-for="CurrentKilometres" />
+						<input type="hidden" asp-for="Location" />
+				}
+				else
+				{
+					<div class="mb-3">
+						<label asp-for="CurrentKilometres" class="form-label"></label>
+						<input asp-for="CurrentKilometres" class="form-control" />
+						<span asp-validation-for="CurrentKilometres" class="text-danger"></span>
+					</div>
+
+					<div class="mb-3">
+						<label asp-for="Location" class="form-label"></label>
+						<input asp-for="Location" class="form-control" />
+						<span asp-validation-for="Location" class="text-danger"></span>
+					</div>
+
+
+					if (carList != null && carList.Count() == 1)
+					{
+						<input type="hidden" asp-for="CarId" value="@carList.First().Id" />
+					}
+					else
+					{
+						<div class="mb-3">
+							<label asp-for="CarId" class="form-label">Select Your Car</label>
+							<select asp-for="CarId" class="form-select" asp-items="@(new SelectList(ViewBag.CarList, "Id", "PlateNumber"))">
+								<option value="">-- Select Car --</option>
+							</select>
+							<span asp-validation-for="CarId" class="text-danger"></span>
+						</div>
+					}
+				}
+
+				@if (serviceList != null && serviceList.Count() == 1)
+				{
+					<input type="hidden" asp-for="ServiceId" value="@serviceList.First().Id" />
+				}
+				else
+				{
+					<div class="mb-3">
+						<label asp-for="ServiceId" class="form-label">Select a Service</label>
+						<select asp-for="ServiceId" class="form-select" asp-items="@(new SelectList(serviceList, "Id", "Name"))">
+							<option value="">-- Select Service --</option>
+						</select>
+						<span asp-validation-for="ServiceId" class="text-danger"></span>
+					</div>
+				}
+
+				@if (!User.IsInRole(SD.TechnicianRole))
+				{
+					<div class="mb-3">
+						<div class="alert alert-warning p-2" style="font-size: 0.95rem;">
+							<i class="bi bi-exclamation-triangle-fill me-1"></i>
+							<strong>Important:</strong> For services like <strong>inspection</strong> or similar, if an additional service is required,
+							you will be notified via <strong>email</strong>. You are free to decide whether to proceed:
+							<ul class="mb-0 mt-1">
+								<li>You will receive a link to confirm and pay for the extra service.</li>
+								<li>If you choose not to respond, no additional action will be taken.</li>
+							</ul>
+						</div>
+					</div>
+				}
+
+
+				<div class="d-flex justify-content-between">
+					<button type="submit" class="btn btn-dark w-50 me-2">Submit</button>
+						@if (serviceList != null && serviceList.Count() > 1)
+						{
+						<a asp-action="AllTicket"  
+						class="btn btn-outline-secondary w-50 ms-2">Back</a>
+						}
+						else
+						{
+							<a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary w-50 ms-2">Back</a>
+						}
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

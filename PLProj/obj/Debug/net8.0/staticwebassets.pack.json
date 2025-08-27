@@ -1,0 +1,481 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\35bd6e75-2fcc-4b47-920a-9a0e4850bc79.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\35bd6e75-2fcc-4b47-920a-9a0e4850bc79.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\5e3ff21c-e52f-4199-8067-107114bcd00c.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\5e3ff21c-e52f-4199-8067-107114bcd00c.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\7d499111-a579-43aa-b94b-5832aa74d5f8.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\7d499111-a579-43aa-b94b-5832aa74d5f8.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\85fb5eab-0f16-431d-bf18-25aaf00a1a6a.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\85fb5eab-0f16-431d-bf18-25aaf00a1a6a.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\86363a83-3fe7-4ed1-97b6-d28c74e7331b.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\86363a83-3fe7-4ed1-97b6-d28c74e7331b.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\97533486-85c8-4e60-be61-675e3d3f2cc6.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\97533486-85c8-4e60-be61-675e3d3f2cc6.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\ba226c08-6f55-495c-b380-0fa23b90b500.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\ba226c08-6f55-495c-b380-0fa23b90b500.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\product\\uploads\\d901f395-0637-4acb-bb1c-ae28c4ccdb58.jpg",
+      "PackagePath": "staticwebassets\\Images\\product\\uploads\\d901f395-0637-4acb-bb1c-ae28c4ccdb58.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\service\\uploads\\2ea97dfd-a4a7-4cb3-975d-4535022fbe99.png",
+      "PackagePath": "staticwebassets\\Images\\service\\uploads\\2ea97dfd-a4a7-4cb3-975d-4535022fbe99.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\service\\uploads\\395584a4-ca99-4cc9-941b-db9fba65a55f.png",
+      "PackagePath": "staticwebassets\\Images\\service\\uploads\\395584a4-ca99-4cc9-941b-db9fba65a55f.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\service\\uploads\\bef5bfbb-a523-422e-899c-69fd618bc8aa.png",
+      "PackagePath": "staticwebassets\\Images\\service\\uploads\\bef5bfbb-a523-422e-899c-69fd618bc8aa.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\technician\\uploads\\2cde4a90-e11c-4df2-b58a-8203f9f95435.png",
+      "PackagePath": "staticwebassets\\Images\\technician\\uploads\\2cde4a90-e11c-4df2-b58a-8203f9f95435.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\technician\\uploads\\457a91a6-91e9-4cbd-9bc2-1b24b8d0af0c.png",
+      "PackagePath": "staticwebassets\\Images\\technician\\uploads\\457a91a6-91e9-4cbd-9bc2-1b24b8d0af0c.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\technician\\uploads\\6106f1c2-ea19-47f5-be37-e0d9b136ea8c.png",
+      "PackagePath": "staticwebassets\\Images\\technician\\uploads\\6106f1c2-ea19-47f5-be37-e0d9b136ea8c.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\Images\\technician\\uploads\\8d2e7f16-65a5-4472-8281-ae10af387307.png",
+      "PackagePath": "staticwebassets\\Images\\technician\\uploads\\8d2e7f16-65a5-4472-8281-ae10af387307.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\css\\all.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\all.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\js\\all.js",
+      "PackagePath": "staticwebassets\\font-awesome\\js\\all.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\font-awesome\\js\\all.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\font-awesome\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\03a6c891-1483-4ddb-a542-5763af788b82.jpg",
+      "PackagePath": "staticwebassets\\imgs\\03a6c891-1483-4ddb-a542-5763af788b82.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\1.jpg",
+      "PackagePath": "staticwebassets\\imgs\\1.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\2.jpg",
+      "PackagePath": "staticwebassets\\imgs\\2.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\2aac84fa-6bbb-44fd-9f66-085fd6764d46.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\2aac84fa-6bbb-44fd-9f66-085fd6764d46.jpeg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\3.jpg",
+      "PackagePath": "staticwebassets\\imgs\\3.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\4.jpg",
+      "PackagePath": "staticwebassets\\imgs\\4.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\5.jpg",
+      "PackagePath": "staticwebassets\\imgs\\5.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\6.jpg",
+      "PackagePath": "staticwebassets\\imgs\\6.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\7bd52be2-d228-4d5b-84f5-a139c976323a.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\7bd52be2-d228-4d5b-84f5-a139c976323a.jpeg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\9ae92292-3a51-4005-8db7-3a8f99bf9355.jpeg",
+      "PackagePath": "staticwebassets\\imgs\\9ae92292-3a51-4005-8db7-3a8f99bf9355.jpeg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\BGPhoto.jpg",
+      "PackagePath": "staticwebassets\\imgs\\BGPhoto.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\Img1.jpg",
+      "PackagePath": "staticwebassets\\imgs\\Img1.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\Logo.png",
+      "PackagePath": "staticwebassets\\imgs\\Logo.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\Service1.png",
+      "PackagePath": "staticwebassets\\imgs\\Service1.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\brake.png",
+      "PackagePath": "staticwebassets\\imgs\\brake.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\car-engine.png",
+      "PackagePath": "staticwebassets\\imgs\\car-engine.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\car-oil.png",
+      "PackagePath": "staticwebassets\\imgs\\car-oil.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\carousel-bg-1.jpg",
+      "PackagePath": "staticwebassets\\imgs\\carousel-bg-1.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\carousel-bg-2.jpg",
+      "PackagePath": "staticwebassets\\imgs\\carousel-bg-2.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\client.png",
+      "PackagePath": "staticwebassets\\imgs\\client.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\confirm.png",
+      "PackagePath": "staticwebassets\\imgs\\confirm.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\d54d7f37-bd9b-41cb-9086-e43c2f0c8fe9.jpg",
+      "PackagePath": "staticwebassets\\imgs\\d54d7f37-bd9b-41cb-9086-e43c2f0c8fe9.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\electric.jpg",
+      "PackagePath": "staticwebassets\\imgs\\electric.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\engine.png",
+      "PackagePath": "staticwebassets\\imgs\\engine.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\images.png",
+      "PackagePath": "staticwebassets\\imgs\\images.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\img2.jpg",
+      "PackagePath": "staticwebassets\\imgs\\img2.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\main1.jpg",
+      "PackagePath": "staticwebassets\\imgs\\main1.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\mech1.png",
+      "PackagePath": "staticwebassets\\imgs\\mech1.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\mech2.png",
+      "PackagePath": "staticwebassets\\imgs\\mech2.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\mech3.png",
+      "PackagePath": "staticwebassets\\imgs\\mech3.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\service-1.jpg",
+      "PackagePath": "staticwebassets\\imgs\\service-1.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\service-2.jpg",
+      "PackagePath": "staticwebassets\\imgs\\service-2.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\service-3.jpg",
+      "PackagePath": "staticwebassets\\imgs\\service-3.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\service-4.jpg",
+      "PackagePath": "staticwebassets\\imgs\\service-4.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\srvc.png",
+      "PackagePath": "staticwebassets\\imgs\\srvc.png"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\t1.jpg",
+      "PackagePath": "staticwebassets\\imgs\\t1.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\t2.jpg",
+      "PackagePath": "staticwebassets\\imgs\\t2.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\imgs\\t3.jpg",
+      "PackagePath": "staticwebassets\\imgs\\t3.jpg"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\brand.js",
+      "PackagePath": "staticwebassets\\js\\brand.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\category.js",
+      "PackagePath": "staticwebassets\\js\\category.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\color.js",
+      "PackagePath": "staticwebassets\\js\\color.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\model.js",
+      "PackagePath": "staticwebassets\\js\\model.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\order.js",
+      "PackagePath": "staticwebassets\\js\\order.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\part.js",
+      "PackagePath": "staticwebassets\\js\\part.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\product.js",
+      "PackagePath": "staticwebassets\\js\\product.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\productCategory.js",
+      "PackagePath": "staticwebassets\\js\\productCategory.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\service.js",
+      "PackagePath": "staticwebassets\\js\\service.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\ticket.js",
+      "PackagePath": "staticwebassets\\js\\ticket.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\js\\user.js",
+      "PackagePath": "staticwebassets\\js\\user.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\easing\\easing.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\easing\\easing.min.js",
+      "PackagePath": "staticwebassets\\lib\\easing\\easing.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery\\jqueryui\\jquery-ui.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jqueryui\\jquery-ui.js"
+    },
+    {
+      "Id": "E:\\track\\tectnical\\MVC\\projects\\p4\\PLProj\\wwwroot\\lib\\jquery\\jqueryui\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\jqueryui\\jquery-ui.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PLProj.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PLProj.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PLProj.props",
+      "PackagePath": "build\\PLProj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PLProj.props",
+      "PackagePath": "buildMultiTargeting\\PLProj.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PLProj.props",
+      "PackagePath": "buildTransitive\\PLProj.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

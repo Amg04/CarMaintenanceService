@@ -1,0 +1,100 @@
+﻿@model HomeViewModel
+@{
+	ViewData["Title"] = "Home Page";
+
+	var initialTechnicians = Model.Technicians.Take(3).ToList();
+	var moreThanThree = Model.Technicians.Count > 3;
+}
+<br />
+
+<partial name="_notification" />
+
+<div class="fullscreen-bg">
+	<div class="content-overlay">
+		<h1>Welcome to our website</h1>
+		<p>Professional and fast car service</p>
+	</div>
+</div>
+
+<section class="services-section">
+	<h2 class="services-title">OUR SERVICES</h2>
+	<div class="services-cards">
+		@foreach (var item in Model.Services)
+		{
+			<form asp-controller="Ticket" asp-action="AddTicket" asp-route-id="@item.Id" method="get">
+				@Html.AntiForgeryToken()
+				<input type="hidden" asp-for="@item.Id" />
+
+				<div class="service-card">
+					<img src="@item.ImgPath" alt="Service Image" class="service-icon" />
+					<h3>@item.Name</h3>
+					<p class="text-muted mb-2">
+						@item.Description
+					</p>
+					<div class="mb-2">
+						<span class="fw-bold">Category:</span> @item.Category.Name
+					</div>
+
+					<div class="mb-3">
+						<span class="fw-bold">Price:</span> $@item.Price
+					</div>
+
+					<button class="btn btn-warning mx-2 d-inline-flex align-items-center">Book a Ticket</button>
+				</div>
+			</form>
+		}
+	</div>
+</section>
+
+
+<hr class="divider" />
+
+<section class="technicians-section">
+	<h2 class="technicians-title">OUR TECHNICIANS</h2>
+	<p class="technicians-desc">
+		Our technicians are highly trained and dedicated professionals, ensuring top-quality service and expertise in every task.
+	</p>
+	<div id="techniciansContainer" class="technicians-cards">
+		@await Html.PartialAsync("_TechnicianListPartial", initialTechnicians)
+	</div>
+
+	@if (moreThanThree)
+	{
+		<button id="viewAllBtn" class="btn btn-warning mt-3">View All</button>
+	}
+
+</section>
+
+<hr class="divider" />
+
+<div class="container technicians-section">
+	<div class="image-container">
+		<img src="~/imgs/srvc.png" alt="Mechanic working on car" />
+	</div>
+	<div class="text-container">
+		<h2>WHO ARE WE?</h2>
+		<p>
+			We're a leading car e-service provider dedicated to making car maintenance hassle-free and affordable.
+			Our mission is to offer convenient, on-demand services that save customers time and money, with a team
+			of experienced technicians and a commitment to quality, we're revolutionizing the way people care for
+			their vehicles.
+		</p>
+		<button class="btn btn-warning mt-3">READ MORE</button>
+	</div>
+</div>
+
+
+@section Scripts {
+	<script>
+		document.getElementById("viewAllBtn")?.addEventListener("click", function () {
+			fetch('/Home/TechniciansPartial')
+				.then(res => res.text())
+				.then(html => {
+					document.getElementById("techniciansContainer").innerHTML = html;
+					document.getElementById("viewAllBtn").style.display = "none";
+				})
+				.catch(err => console.error("Error loading technicians:", err));
+		});
+	</script>
+}
+

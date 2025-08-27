@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "popper.js@2.11.8",
+      "destination": "wwwroot/popper.js/"
+    },
+    {
+      "library": "bootstrap@5.3.3",
+      "destination": "wwwroot/bootstrap/",
+      "files": [
+        "js/bootstrap.min.js",
+        "css/bootstrap.min.css"
+      ]
+    },
+    {
+      "library": "jquery@3.7.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js",
+        "jquery.js"
+      ]
+    },
+    {
+      "library": "jqueryui@1.14.0",
+      "destination": "wwwroot/lib/jquery/jqueryui/",
+      "files": [
+        "jquery-ui.min.js",
+        "jquery-ui.js"
+      ]
+    },
+    {
+      "library": "toast-css@1.1.0",
+      "destination": "wwwroot/lib/toast-css/",
+      "files": [
+        "grid.min.css"
+      ]
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/lib/toast-css/toastr.js/",
+      "files": [
+        "toastr.min.js"
+      ]
+    }
+  ]
+}

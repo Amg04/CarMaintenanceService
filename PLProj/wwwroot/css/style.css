@@ -1,0 +1,382 @@
+﻿/* Reset */
+html, body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.fullscreen-bg {
+    background-image: url('/imgs/BGPhoto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+/* طبقة فوق الخلفية يمكن استخدامها للنص أو الزرار */
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* طبقة شفافة */
+    padding: 40px;
+    border-radius: 8px;
+}
+
+    .content-overlay h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .content-overlay p {
+        font-size: 1.2rem;
+    }
+
+
+
+
+/* Headings */
+h2, h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Main Wrapper */
+main {
+    flex: 1;
+}
+
+/* ====== SERVICES SECTION ====== */
+.services-section {
+    padding: 60px 20px; /* زيادة التباعد العمودي لإراحة العين */
+    text-align: center;
+    background-color: #f9f9f9; /* خلفية فاتحة مريحة للنظر */
+    margin-top: 100vh;
+}
+
+.services-title {
+    font-weight: 700; /* زيادة سمك الخط */
+    font-size: 2.5rem; /* حجم أكبر للعنوان */
+    color: #333; /* لون داكن للعنوان */
+    margin-bottom: 40px;
+    text-transform: uppercase; /* تحويل النص لأحرف كبيرة لإبراز العنوان */
+    letter-spacing: 2px; /* تباعد بين الحروف */
+}
+
+.services-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* زيادة الفجوة بين البطاقات */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto; /* تمركز البطاقات */
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 12px; /* تدوير حواف أكبر */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ظل أعمق وأوضح */
+    padding: 30px 25px;
+    width: 280px; /* زيادة عرض البطاقة قليلاً */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+    .service-card:hover {
+        transform: translateY(-10px) scale(1.05); /* رفع وتكبير البطاقة عند التمرير */
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* زيادة الظل */
+    }
+
+.service-icon {
+    width: 60px; /* زيادة حجم الأيقونة */
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1)); /* ظل خفيف للأيقونة */
+}
+
+
+/* ====== TECHNICIANS SECTION ====== */
+.technicians-section {
+    padding: 60px 20px; /* زيادة التباعد عمودياً */
+    text-align: center;
+    background-color: #f9f9f9; /* خلفية فاتحة متناسقة مع قسم الخدمات */
+}
+
+.technicians-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.technicians-desc {
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.technicians-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+.technician-card {
+    background-color: #000;
+    color: #fff;
+    width: 280px; /* تقريباً نفس عرض بطاقات الخدمات */
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+    .technician-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+.technician-img {
+    width: 100%;
+    height: 180px; /* زيادة ارتفاع الصورة لتناسب الحجم الأكبر */
+    object-fit: cover;
+}
+
+.technician-info {
+    padding: 20px;
+}
+
+.technician-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.technician-role {
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+
+/* ====== WHO ARE WE SECTION ====== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 40px;
+}
+
+.image-container img {
+    width: 300px;
+    border-radius: 6px;
+}
+
+.text-container {
+    max-width: 500px;
+    color: #333;
+}
+
+    .text-container p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+
+/* ====== DIVIDER LINE ====== */
+
+.divider {
+    margin: 40px auto;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #888, transparent);
+    border: none;
+    opacity: 0.6;
+}
+
+
+
+/* ====== HEADER ====== */
+.site-header {
+    background-color: #222;
+    color: #fff;
+    height: auto;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.left-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: default;
+    user-select: none;
+    color: #f9f9f9;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+    .logo span {
+        text-decoration: none;
+    }
+
+
+.main-nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+    .main-nav > ul > li {
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+    .main-nav a:hover {
+        color: #ffe066;
+    }
+
+/* ====== FOOTER ====== */
+.site-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-info a {
+    color: #ffe066;
+    text-decoration: none;
+}
+
+    .footer-info a:hover {
+        text-decoration: underline;
+    }
+
+.social-links a {
+    color: #ffe066;
+    margin: 0 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+    .social-links a:hover {
+        color: #fff;
+    }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .header-container,
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav li {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* تخصيص شكل قائمة dropdown */
+.dropdown-menu {
+    background-color: #222 !important; /* خلفية سمراء */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+    /* العناصر داخل القائمة */
+    .dropdown-menu .dropdown-item {
+        color: #fff !important; /* نص أبيض */
+        padding: 10px 20px;
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+        /* عند تمرير الماوس على العنصر */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: transparent;
+            color: #ffe066 !important; /* لون أصفر عند hover */
+        }
+
+.main-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,58 @@
+﻿@model CarViewModel
+
+@{
+    ViewData["Title"] = "Add Car";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm w-100" style="max-width: 600px;">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Add Car</h2>
+
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                @await Html.PartialAsync("partialviews/createeditcarpartial", Model)
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-check-circle me-1"></i>Add</button>
+                    <a asp-action="Index" class="btn btn-outline-dark">
+                        <i class="bi bi-arrow-left me-1"></i>Back To List
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Update model list based on selected brand
+              $("#DrpBrand").change(function () {
+            var BrandId = $(this).val();
+            if (BrandId) {
+                $.ajax({
+                    url: '@Url.Action("GetModelsByBrandId", "Car")',
+                    type: "GET",
+                    data: { BrandId: BrandId },
+                    success: function (data) {
+                        let DrpModel = $("#DrpModel");
+                        DrpModel.empty().append("<option value=''>Select Model</option>");
+                        for (let i = 0; i < data.length; i++) {
+                            DrpModel.append(`<option value="${data[i].id}">${data[i].name}</option>`);
+                        }
+                    },
+                    error: function () {
+                        alert('Error loading models. Please try again.');
+                    }
+                });
+            } else {
+                $("#DrpModel").empty().append("<option value=''>Select Model</option>");
+            }
+        });
+
+    </script>
+}
+
+
+
+

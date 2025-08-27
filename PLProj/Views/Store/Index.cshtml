@@ -1,0 +1,68 @@
+﻿@model X.PagedList.IPagedList<ProductViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common
+
+@{
+	ViewData["Title"] = "Products";
+}
+
+<partial name="_notification" />
+
+<section class="py-5">
+	<div class="container px-4 px-lg-5 mt-5">
+		<div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center">
+			@foreach (var item in Model)
+			{
+				<div class="col mb-5">
+					<div class="card h-100 hover-card">
+						<a asp-controller="Store" asp-action="Details" asp-route-id="@item.Id">
+							<img class="card-img-top" src="~/@item.ImgPath" alt="..." width="450" height="300" />
+						</a>
+						<div class="card-body p-4">
+							<div class="text-center">
+								<h5 class="fw-bolder">@item.Name</h5>
+								$@item.Price
+							</div>
+						</div>
+						<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+							<div class="text-center">
+								<a asp-controller="Store" asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark mt-auto">View Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+		</div>
+
+		<!-- Pagination -->
+		<div class="d-flex justify-content-center mt-4">
+			@Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+							new PagedListRenderOptions
+			{
+				DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+				DisplayLinkToLastPage = PagedListDisplayMode.Always,
+				DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+				DisplayLinkToNextPage = PagedListDisplayMode.Always,
+				MaximumPageNumbersToDisplay = 5,
+				ClassToApplyToFirstListItemInPager = "page-item",
+				ClassToApplyToLastListItemInPager = "page-item",
+				LiElementClasses = new[] { "page-item" },
+				PageClasses = new[] { "page-link" }
+			}
+							)
+		</div>
+	</div>
+</section>
+
+<style>
+	.hover-card {
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+		.hover-card:hover {
+			transform: scale(1.03);
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+			z-index: 2;
+		}
+</style>
+

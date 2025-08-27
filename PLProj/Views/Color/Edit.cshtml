@@ -1,0 +1,36 @@
+﻿@model ColorViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm w-100" style="max-width: 500px;">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Edit </h2>
+
+            <form asp-controller="Color" asp-action="Edit" asp-route-id="@Model.Id" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-success"><i class="bi bi-check-circle me-1"></i>save</button>
+                    <a asp-controller="Color" asp-action="Index" class="btn btn-outline-dark">
+                        <i class="bi bi-arrow-left me-1"></i>Back to list
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

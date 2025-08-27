@@ -1,0 +1,77 @@
+﻿@model CarViewModel
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+	<div class="card shadow-sm w-100" style="max-width: 600px;">
+		<div class="card-body">
+			<h2 class="card-title text-center mb-4">Edit</h2>
+
+			<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+				<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+				@Html.AntiForgeryToken()
+				<input type="hidden" asp-for="Id" />
+				@await Html.PartialAsync("partialviews/createeditcarpartial", Model)
+				<div class="d-flex justify-content-between">
+					<button type="submit" class="btn btn-dark"><i class="bi bi-check-circle me-1"></i>Save</button>
+					<a asp-action="Index" class="btn btn-outline-dark">
+						<i class="bi bi-arrow-left me-1"></i>Back To List</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+			function loadModels(brandId, selectedModelId = null) {
+				if (brandId) {
+					$.ajax({
+						url: '@Url.Action("GetModelsByBrandId", "Car")',
+						type: "GET",
+						data: { BrandId: brandId },
+						success: function (data) {
+							let drpModel = $("#DrpModel");
+							drpModel.empty();
+
+							for (let i = 0; i < data.length; i++) {
+								let selected = data[i].id == selectedModelId ? "selected" : "";
+								drpModel.append(`<option value="${data[i].id}" ${selected}>${data[i].name}</option>`);
+							}
+						},
+						error: function () {
+							alert('Error loading models.');
+						}
+					});
+				}
+			}
+
+			// أول مرة تحميل الصفحة
+			let selectedBrandId = $("#DrpBrand").val();
+			let selectedModelId = "@Model.ModelId";
+			loadModels(selectedBrandId, selectedModelId);
+
+			// عند تغيير البراند
+			$("#DrpBrand").on("change", function () {
+				let newBrandId = $(this).val();
+				loadModels(newBrandId); // ما فيش selected model في الحالة دي
+			});
+		});
+	</script>
+}
+
+
+
+
+
+
+
+
+}
+
+
+
+

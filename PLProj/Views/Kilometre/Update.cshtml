@@ -1,0 +1,33 @@
+﻿@model KilometreViewModel
+@{
+    ViewData["Title"] = "Update Kilometre";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm w-100" style="max-width: 500px;">
+        <div class="card-body">
+            
+            <h2 class="card-title text-center mb-4">Update Kilometre for Car @Model.PlateNumber</h2>
+            <form asp-action="Update" method="post">
+                <input type="hidden" asp-for="CarId" />
+                <input type="hidden" asp-for="PlateNumber" />
+                @Html.AntiForgeryToken()
+                <div class="alert alert-info" role="alert">
+                    Once you enter your kilometre reading, a detailed email will be sent to you.
+                    If you have already submitted a service ticket before, the system will compare your current data with the previous one
+                    and let you know what needs to be updated or fixed.
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="kiloMetre"></label>
+                    <input asp-for="kiloMetre" class="form-control" />
+                    <span asp-validation-for="kiloMetre" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+           
+        </div>
+    </div>
+</div>
+

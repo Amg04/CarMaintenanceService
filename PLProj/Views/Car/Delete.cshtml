@@ -1,0 +1,73 @@
+﻿@model CarViewModel
+
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+	<div class="card shadow-sm w-100" style="max-width: 600px;">
+		<div class="card-body">
+			<h2 class="card-title text-center mb-4">Delete</h2>
+			<form asp-action="Delete" method="post">
+				<div asp-validation-summary="All" class="text-danger mb-3"></div>
+				@Html.AntiForgeryToken()
+				<input type="hidden" asp-for="Id" />
+
+				<div class="alert alert-danger text-center fw-bold">
+					⚠️ Warning: Deleting this car will also delete all related tickets permanently.
+				</div>
+
+
+				<div class="mb-3">
+					<label asp-for="PlateNumber" class="form-label"></label>
+					<input asp-for="PlateNumber" class="form-control" disabled />
+					<span asp-validation-for="PlateNumber" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Brand</label>
+					<input asp-for="Model.Brand.Name" class="form-control" disabled />
+					<span asp-validation-for="Model.Brand.Name" class="text-danger"></span>
+				</div>
+
+
+				<div class="mb-3">
+					<label class="form-label">Model</label>
+					<input asp-for="Model.Name" class="form-control" disabled />
+					<span asp-validation-for="Model.Name" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label">Color</label>
+					<input asp-for="Color.Name" class="form-control" disabled />
+					<span asp-validation-for="Color.Name" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label asp-for="Year" class="form-label"></label>
+					<input asp-for="Year" class="form-control" disabled />
+					<span asp-validation-for="Year" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label asp-for="Description" class="form-label"></label>
+					<textarea asp-for="Description" class="form-control" disabled></textarea>
+					<span asp-validation-for="Description" class="text-danger"></span>
+				</div>
+
+
+				<div class="d-flex justify-content-between">
+					<button type="submit" class="btn btn-danger">Delete</button>
+					<a asp-action="Index" class="btn btn-outline-dark">Back To List</a>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+﻿@model EditTickerViewModel
+@{
+    ViewData["Title"] = "Edit Ticket";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm w-100" style="max-width: 500px;">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Edit Ticket</h2>
+
+            <form asp-controller="Ticket" asp-action="EditTicket" asp-route-id="@Model.id" method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="id" />
+                <div class="mb-3">
+                    <label asp-for="StartDataTime" class="form-label"></label>
+                    <input asp-for="StartDataTime" class="form-control" />
+                    <span asp-validation-for="StartDataTime" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="EndDateTime" class="form-label"></label>
+                    <input asp-for="EndDateTime" class="form-control" />
+                    <span asp-validation-for="EndDateTime" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="StateType" class="form-label"></label>
+                    <select asp-for="StateType" class="form-control"
+                            asp-items="Html.GetEnumSelectList<StateType>()">
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="FinalReport" class="form-label"></label>
+                    <textarea asp-for="FinalReport" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="FinalReport" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between ">
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-check-circle me-1"></i>Edit</button>
+                    <a  asp-action="Details" asp-route-id="@Model.id" class="btn btn-outline-dark">
+                        <i class="bi bi-arrow-left me-1"></i>Back To List
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

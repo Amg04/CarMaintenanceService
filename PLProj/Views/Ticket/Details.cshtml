@@ -1,0 +1,187 @@
+﻿@model Ticket
+@{
+	ViewData["Title"] = "Details";
+}
+
+<partial name="_notification" />
+
+<div class="container mt-5">
+	<div class="card shadow border-0 mt-4">
+		<div class="card-header bg-dark text-white py-3">
+			<div class="row">
+				<div class="col-12 text-center">
+					<h2 class="text-white py-2">Ticket</h2>
+				</div>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="table-responsive">
+				<table class="table table-bordered shadow-sm">
+					<thead class="table-dark text-center">
+						<tr>
+							<th>Plate Number</th>
+							<th>Brand</th>
+							<th>Model</th>
+							<th>Service</th>
+							<th>Location</th>
+							<th>User Number</th>
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<th>Edit Ticket</th>
+							}
+							else if (User.IsInRole(SD.CustomerRole))
+							{
+								<th colspan="2"> Actions </th>
+							}
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="table-primary text-center">
+							<td>@Model.Car.PlateNumber</td>
+							<td>@Model.Car.Model.Brand.Name</td>
+							<td>@Model.Car.Model.Name</td>
+							<td>@Model.Service.Name</td>
+							<td>@Model.Location</td>
+							<td>@Model.Car.AppUser?.PhoneNumber</td>
+							@if (User.IsInRole(SD.AdminRole))
+							{
+								<td>
+									<a asp-action="EditTicket" asp-route-Id="@Model.Id"
+									   class="btn btn-dark btn-sm">  Edit Ticket</a>
+								</td>
+							}
+							else if (User.IsInRole(SD.CustomerRole))
+							{
+								<td colspan="2">
+									<a asp-action="TicketDetails" asp-route-id="@Model.Id"
+									   class="btn btn-sm btn-outline-secondary">More Details</a>
+									@if (Model.Feedback == null && Model.stateType == StateType.Finished)
+									{
+										<a asp-action="AddFeedback" asp-route-Id="@Model.Id"
+										   class="btn btn-sm btn-outline-primary">  Add Feedback</a>
+									}
+									else if (Model.stateType == StateType.New)
+									{
+										var formId = $"deleteForm_{Model.Id}";
+										<form id="@formId" asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-inline">
+											<button type="button" class="btn btn-sm btn-outline-danger"
+											onclick="confirmDelete('@formId')">Delete</button>
+										</form>
+									}
+
+								</td>
+							}
+						</tr>
+
+						@if (Model.stateType != StateType.New)
+						{
+							<tr>
+								<td colspan="7" class="text-center">
+									<div class="d-flex justify-content-center">
+										<table class="table table-sm table-bordered mb-0">
+											<thead class="table-light text-center">
+												<tr>
+													<th>#</th>
+													<th>Start Date</th>
+													<th>Technician</th>
+													<th>Driver</th>
+													<th>Techinicion Number</th>
+													@if (User.IsInRole(SD.AdminRole))
+													{
+														<th>Edit Appointment </th>
+													}
+													else if (User.IsInRole(SD.CustomerRole))
+													{
+														<th>Actions</th>
+													}
+													else if (User.IsInRole(SD.TechnicianRole))
+													{
+														<th colspan="2">Actions</th>
+													}
+												</tr>
+											</thead>
+											<tbody class="text-center">
+												@for (int i = 0; i < Model.Appointments.Count; i++)
+												{
+													var app = Model.Appointments.ElementAt(i);
+													<tr>
+														<td>@(i + 1)</td>
+														<td>@app.StartDateTime</td>
+														<td>@app.Technician?.User?.Name</td>
+														<td>@(app.Driver?.User?.Name ?? "-")</td>
+														<td>@app.Technician?.User?.PhoneNumber</td>
+														@if (User.IsInRole(SD.AdminRole))
+														{
+															<td>
+																<a asp-action="EditAppointment" asp-route-Id="@app.Id"
+																   class="btn btn-dark btn-sm">  Edit Appointment</a>
+															</td>
+														}
+														else if (User.IsInRole(SD.CustomerRole))
+														{
+															<td>
+																<a asp-action="AppointmentDetails" asp-route-Id="@app.Id"
+																   class="btn btn-sm btn-outline-secondary"> More Details</a>
+															</td>
+														}
+														else if (User.IsInRole(SD.TechnicianRole))
+														{
+															<td>
+																<a asp-action="FinishAppointment" asp-route-Id="@app.Id"
+																   class="btn btn-dark btn-sm"> <i class="fas fa-check-circle me-1"></i> Finish appointment </a>
+															</td>
+															<td>
+																<a asp-action="AddTicket" asp-route-id="@Model.Id"
+																   class="btn btn-dark btn-sm"> <i class="fas fa-check-circle me-1"></i> Addition Service </a>
+															</td>
+														}
+													</tr>
+												}
+											</tbody>
+										</table>
+									</div>
+								</td>
+							</tr>
+						}
+						else
+						{
+							<tr>
+								<td colspan="7" class="text-center text-muted">No appointments found for this ticket.</td>
+							</tr>
+						}
+
+					</tbody>
+				</table>
+			</div>
+			<div class="d-flex justify-content-center mt-4">
+				<a asp-controller="Ticket" asp-action="AllTicket" class="btn btn-dark btn-lg px-4">
+					<i class="bi bi-arrow-left-circle me-2"></i> Back to List
+				</a>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+@section Scripts {
+	<script>
+		function confirmDelete(formId) {
+			Swal.fire({
+				title: "Are you sure?",
+				text: "This will delete the ticket!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#d33",
+				cancelButtonColor: "#3085d6",
+				confirmButtonText: "Yes, delete it!"
+			}).then((result) => {
+				if (result.isConfirmed) {
+					document.getElementById(formId).submit();
+				}
+			});
+		}
+
+	</script>
+}
+

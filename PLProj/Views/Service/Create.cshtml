@@ -1,0 +1,31 @@
+﻿@model ServiceViewModel
+@inject IUnitOfWork unitOfwork
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm w-100" style="max-width: 500px;">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Add Service</h2>
+
+            <form asp-controller="Service" asp-action="Create" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+               
+                @await Html.PartialAsync("_CreateEditServicesPartial", Model)
+                <div class="mb-3">
+                    <label asp-for="ImgPath" class="form-label"></label>
+                    <input type="file" name="file" class="form-control border-0 shadow" />
+                </div>
+
+                <div class="d-flex justify-content-between ">
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-check-circle me-1"></i>Add</button>
+                    <a asp-controller="Service" asp-action="Index" class="btn btn-outline-dark">
+                        <i class="bi bi-arrow-left me-1"></i>Back To List
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

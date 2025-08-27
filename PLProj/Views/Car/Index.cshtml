@@ -1,0 +1,105 @@
+﻿@model IEnumerable<CarViewModel>
+
+@{
+	ViewData["Title"] = "Cars";
+}
+
+<partial name="_notification" />
+<div class="container mt-5">
+	<div class="card shadow border-0 mt-4">
+		<div class="card-header bg-dark text-white py-3">
+			<div class="row">
+				<div class="bg-dark text-white d-flex justify-content-between align-items-center px-3 py-3 rounded-top">
+					<h2 class="mb-0">My Cars</h2>
+					<a asp-action="Create" class="btn btn-light btn-sm"><i class="fa-solid fa-plus"></i> Add New Car</a>
+				</div>
+			</div>
+		</div>
+		<div class="card-body p-4">
+			<div class="table-responsive">
+				@if (Model != null && Model.Any())
+				{
+					<table class="table table-bordered shadow-sm">
+						<thead class="table-dark text-center">
+							<tr>
+								<th>Plate Number</th>
+								<th>Brand</th>
+								<th>Model</th>
+								<th>Color</th>
+								<th>Year</th>
+								<th>Description</th>
+								<th colspan="2">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							@foreach (var car in Model)
+							{
+								<tr class="table-primary text-center">
+									<td>@car.PlateNumber</td>
+									<td>@car.Model.Brand.Name</td>
+									<td>@car.Model.Name</td>
+									<td>@car.Color.Name</td>
+									<td>@car.Year</td>
+									<td>@car.Description</td>
+									<td colspan="2">
+										<a asp-action="Edit" asp-route-id="@car.Id" class="btn btn-sm btn-outline-primary me-2">Edit</a>
+										<a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-sm btn-outline-danger">Delete</a>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+
+					@if (Model.Count() > 1)
+					{
+						<div class="d-flex justify-content-between mt-4">
+							<form id="deleteAllForm" asp-action="DeleteAll" method="post">
+								<button type="button" class="btn btn-danger" onclick="confirmDeleteAll()">Delete All</button>
+							</form>
+							<a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back To Home</a>
+						</div>
+					}
+					else
+					{
+						<div class="d-flex justify-content-center mt-4">
+							<a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Back To Home</a>
+						</div>
+					}
+				}
+				else
+				{
+					<div class="d-flex justify-content-center align-items-center min-vh-50 text-center p-5">
+						<div>
+							<h4>No cars available.</h4>
+							<p>You can add a new car by clicking the button above.</p>
+						</div>
+					</div>
+				}
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Scripts {
+
+	<script>
+		function confirmDeleteAll() {
+			Swal.fire({
+				title: "Are you sure?",
+				text: "This will delete all your cars!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#d33",
+				cancelButtonColor: "#3085d6",
+				confirmButtonText: "Yes, delete all!"
+			}).then((result) => {
+				if (result.isConfirmed) {
+					document.getElementById('deleteAllForm').submit();
+				}
+			});
+		}
+	</script>
+}

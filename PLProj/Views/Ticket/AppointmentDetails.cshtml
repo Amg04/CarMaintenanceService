@@ -1,0 +1,69 @@
+﻿@model AppointmentDetailViewModel
+@{
+	ViewData["Title"] = "Appointment Details";
+}
+
+<div style="margin:50px;" class="d-flex justify-content-center align-items-center">
+	<div class="col-12 col-md-10 col-lg-8">
+		<div class="card shadow-lg p-4">
+			<h3 class="text-center font-weight-bold mb-4">Details</h3>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label asp-for="TechnicianName" class="form-label"></label>
+					<input asp-for="TechnicianName" class="form-control rounded-pill" disabled />
+				</div>
+				<div class="col-md-6">
+					<label asp-for="TechPhone" class="form-label"></label>
+					<input asp-for="TechPhone" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label asp-for="DriverName" class="form-label"></label>
+					<input asp-for="DriverName" class="form-control rounded-pill" disabled />
+
+				</div>
+				<div class="col-md-6">
+					<label asp-for="DriverPhone" class="form-label"></label>
+					<input asp-for="DriverPhone" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+
+
+			<div class="row mb-3">
+				<div class="col-md-12">
+					<label asp-for="StartDataTime" class="form-label"></label>
+					<input asp-for="StartDataTime" class="form-control rounded-pill" disabled />
+				</div>
+			</div>
+
+			@if (Model.EndDateTime != null && Model.EndDateTime > DateTime.MinValue)
+			{
+				<div class="row mb-3">
+					<div class="col-md-12">
+						<label asp-for="EndDateTime" class="form-label"></label>
+						<input asp-for="EndDateTime" class="form-control rounded-pill" disabled />
+					</div>
+				</div>
+			}
+
+			@if (Model.PartialReport != null)
+			{
+				<div class="row mb-3">
+					<div class="col-md-12">
+						<label asp-for="PartialReport" class="form-label"></label>
+						<textarea asp-for="PartialReport" class="form-control" rows="4" disabled></textarea>
+					</div>
+				</div>
+			}
+
+			<div class="d-flex justify-content-center mt-4">
+				<a asp-controller="Ticket" asp-action="Details" asp-route-id="@Model.TicketId" class="btn btn-outline-dark">
+					<i class="bi bi-arrow-left me-1"></i>Back To List
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

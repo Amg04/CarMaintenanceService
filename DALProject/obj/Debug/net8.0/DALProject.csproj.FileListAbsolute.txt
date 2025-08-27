@@ -1,0 +1,16 @@
+E:\track\tectnical\MVC\projects\p4\DALProject\bin\Debug\net8.0\DALProject.deps.json
+E:\track\tectnical\MVC\projects\p4\DALProject\bin\Debug\net8.0\DALProject.dll
+E:\track\tectnical\MVC\projects\p4\DALProject\bin\Debug\net8.0\DALProject.pdb
+E:\track\tectnical\MVC\projects\p4\DALProject\bin\Debug\net8.0\Utility.dll
+E:\track\tectnical\MVC\projects\p4\DALProject\bin\Debug\net8.0\Utility.pdb
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.csproj.AssemblyReference.cache
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.GeneratedMSBuildEditorConfig.editorconfig
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.AssemblyInfoInputs.cache
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.AssemblyInfo.cs
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.csproj.CoreCompileInputs.cache
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.sourcelink.json
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.csproj.Up2Date
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.dll
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\refint\DALProject.dll
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\DALProject.pdb
+E:\track\tectnical\MVC\projects\p4\DALProject\obj\Debug\net8.0\ref\DALProject.dll
